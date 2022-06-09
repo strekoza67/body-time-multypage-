@@ -1,0 +1,111 @@
+$black: #363431;
+$white: #fff;
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Comfortaa', cursive;
+  font-weight: 400;
+  color: $black;
+}
+
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: $black;
+}
+
+.site-container {
+  max-width: 1630px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.header {
+  &__inner {
+    min-height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu__list li:not(:last-child) {
+  padding-right: 56px;
+}
+
+.phone-number {
+  position: relative;
+  padding-left: 40px;
+
+  &::before {
+    background-image: url(../images/phone.png);
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.location {
+  position: relative;
+  padding-left: 40px;
+  max-width: 405px;
+
+  &::before {
+    background-image: url(../images/location.png);
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.first {
+  background-image: url(../images/first-bg.jpg);
+  height: 840px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+
+  &__inner {
+    max-width: 784px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    padding: 144px 0 40px;
+    font-size: 56px;
+    line-height: 130%;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+    }
+  }
+}
