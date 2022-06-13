@@ -1,0 +1,89 @@
+// Slider
+
+const slides = document.querySelectorAll('.stocks__slide'),
+  slider = document.querySelector('.stocks__slider'),
+  prev = document.querySelector('.stocks__slider-prev'),
+  next = document.querySelector('.stocks__slider-next'),
+  slidesWrapper = document.querySelector('.stocks__slider-wrapper'),
+  slidesField = document.querySelector('.stocks__slider-inner'),
+  width = window.getComputedStyle(slidesWrapper).width;
+let sliderIndex = 1;
+let offset = 0;
+
+slidesField.style.width = 100 * slides.length + '%';
+slidesField.style.display = 'flex';
+slidesField.style.transition = '0.4s all';
+
+slidesWrapper.style.overflow = 'hidden';
+
+slides.forEach(slide => {
+  slide.style.width = width;
+});
+
+slider.style.position = 'relative';
+
+// Dots
+
+let indicators = document.querySelector('.stocks__slider-dots');
+let dots = [];
+
+for (let i = 0; i < slides.length; i++) {
+  const dot = document.createElement('li');
+  dot.setAttribute('data-slide-to', i + 1);
+  dot.style.cssText = `
+    background: #AEACAA;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+  `;
+
+  if (i == 0) {
+    dot.style.background = '#363431';
+  }
+  indicators.append(dot);
+  dots.push(dot);
+}
+
+function deleteNotDigits(str) {
+  return +str.replace(/\D/g, '');
+}
+
+next.addEventListener('click', () => {
+  if (offset == deleteNotDigits(width) * (slides.length - 1)) {
+    offset = 0;
+  } else {
+    offset += +width.replace(/\D/g, '');
+  }
+
+  slidesField.style.transform = `translateX(-${offset}px)`;
+
+  if (sliderIndex == slides.length) {
+    sliderIndex = 1;
+  } else {
+    sliderIndex++;
+  }
+
+  dots.forEach(dot => dot.style.background = '#AEACAA');
+  dots[sliderIndex - 1].style.background = '#363431';
+
+});
+
+prev.addEventListener('click', () => {
+  if (offset == 0) {
+    offset += deleteNotDigits(width) * (slides.length - 1);
+  } else {
+    offset -= +width.replace(/\D/g, '');
+  }
+
+  slidesField.style.transform = `translateX(-${offset}px)`;
+
+  if (sliderIndex == 1) {
+    sliderIndex = slides.length;
+  } else {
+    sliderIndex--;
+  }
+
+  dots.forEach(dot => dot.style.background = '#AEACAA');
+  dots[sliderIndex - 1].style.background = '#363431';
+
+});
