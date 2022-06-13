@@ -23,13 +23,13 @@ a {
 }
 
 .site-container {
-  max-width: 1600px;
+  max-width: 1630px;
   padding: 0 15px;
   margin: 0 auto;
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1330px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -341,5 +341,84 @@ a {
     &-img {
       object-fit: cover;
     }
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(54, 52, 49, 0.5);
+  display: none;
+
+  &__close {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    font-size: 50px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &__content {
+    width: 512px;
+    height: 528px;
+    background-color: #fff;
+    padding: 72px 60px 72px 56px;
+    border-radius: 16px;
+    text-align: center;
+    position: fixed;
+    top: 20%;
+    left: 35%;
+  }
+
+  &__form {
+    width: 396px;
+
+    &-title {
+      font-size: 32px;
+      line-height: 28px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    &-input {
+      display: block;
+      width: 100%;
+      height: 56px;
+      font-size: 14px;
+      line-height: 17px;
+      color: #828282;
+      padding-left: 16px;
+      border: 0.5px solid #B2B2B2;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+
+    &-btn {
+      width: 241px;
+      height: 56px;
+      border: 1px solid #74B900;
+      border-radius: 8px;
+      color: #74B900;
+      background-color: transparent;
+      cursor: pointer;
+    }
+  }
+
+  .checkbox {
+    display: flex;
+  }
+
+  .checkbox-label {
+    margin: 0 0 40px 8px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: left;
+    display: inline-flex;
   }
 }
