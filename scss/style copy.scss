@@ -9,7 +9,6 @@ body {
   font-family: 'Comfortaa', cursive;
   font-weight: 400;
   color: $black;
-  height: 100%;
 }
 
 ul,
@@ -21,14 +20,6 @@ a {
   text-decoration: none;
   display: inline-block;
   color: $black;
-}
-
-.main {
-  flex: 1 0 auto;
-}
-
-.footer {
-  flex: 0 0 auto;
 }
 
 .site-container {
@@ -44,25 +35,12 @@ a {
 }
 
 .header {
-  &__wrapper {
-    min-height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
   &__inner {
-    display: flex;
     min-height: 120px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-}
-
-.logo__img {
-  object-fit: cover;
 }
 
 .menu ul {
@@ -109,6 +87,10 @@ a {
 
 .first {
   background-image: url(../images/first-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
   height: 840px;
   width: 100%;
   text-align: center;
@@ -286,7 +268,7 @@ a {
   }
 
   &__slider {
-    width: 1300px;
+    min-width: 1300px;
 
     &-wrapper {
       width: 100%;
@@ -558,229 +540,6 @@ a {
   }
 }
 
-.services {
-  display: block;
-
-  &__items {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 32px;
-  }
-
-  &__item {
-    max-width: 784px;
-    min-height: 752px;
-    background-color: #F9F9F9;
-    border-radius: 16px;
-    padding-bottom: 48px;
-
-    &-img {
-      width: 100%;
-    }
-
-    &-title {
-      padding: 48px 0 24px 48px;
-      font-size: 32px;
-      line-height: 42px;
-    }
-
-    &-descr {
-      padding: 0 0 16px 48px;
-      font-size: 20px;
-      line-height: 26px;
-    }
-
-    &-descr span {
-      text-decoration: line-through;
-    }
-  }
-
-}
-
-.header__burger {
-  display: none;
-}
-
-
-
-
-
-
-// Медиа запросы
-
 @media(max-width: 320px) {
-  .menu ul {
-    display: block;
-  }
-
-  .menu {
-    position: absolute;
-    top: 0;
-    left: -100px;
-    z-index: 10;
-
-    &__list-link {
-      font-size: 12px;
-      line-height: 12px;
-    }
-  }
-
-  .header {
-    &__inner {
-      display: none;
-    }
-
-    &__burger {
-      position: relative;
-      width: 100%;
-      align-items: center;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    &__wrapper {
-      min-height: 72px;
-    }
-
-    .logo__img {
-      width: 94px;
-      max-height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .first {
-    height: 496px;
-
-    &__inner {
-      max-width: 288px;
-    }
-
-    &__title {
-      font-size: 30px;
-      line-height: 39px;
-      padding: 72px 0 24px;
-
-      &::after {
-        width: 104px;
-        transform: translateX(-105%);
-      }
-    }
-
-    &__text {
-      margin: 24px 0 56px;
-      font-size: 16px;
-      line-height: 16px;
-    }
-
-    &__btn {
-      width: 172px;
-      height: 56px;
-      font-size: 14px;
-      line-height: 14px;
-    }
-
-    .scroll-btn {
-      margin-top: 56px;
-    }
-  }
-
-  .about {
-    padding-top: 72px;
-
-    &__title {
-      font-size: 28px;
-      line-height: 27px;
-    }
-
-    &__items {
-      margin-top: 40px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    &__item {
-      margin: 0 auto;
-      padding-bottom: 24px;
-
-      &-text {
-        margin-top: 16px;
-        font-size: 16px;
-        line-height: 24px;
-      }
-
-      &-img {
-        width: 72px;
-        height: 72px;
-      }
-    }
-  }
-
-  .help {
-    margin-top: 58px;
-
-    &__title {
-      font-size: 28px;
-      line-height: 36px;
-    }
-
-    &__items {
-      margin-top: 40px;
-      max-width: 288px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    &__item {
-      &-text {
-        font-size: 16px;
-        line-height: 21px;
-      }
-
-      &-img {
-        width: 100%;
-      }
-    }
-
-    .text-1 {
-      padding: 24px 0 0 24px;
-      max-width: 222px;
-    }
-
-    .text-2 {
-      padding: 0 0 24px 24px;
-      max-width: 178px;
-    }
-  }
-}
-
-.stocks {
-  margin-top: 72px;
-  padding-bottom: 72px;
-
-  &__title {
-    font-size: 28px;
-    line-height: 27px;
-    padding: 72px 0 40px;
-  }
-
-  &__slider {
-    width: 288px;
-
-    &-arrows {
-      max-width: 288px;
-      max-height: 40px;
-    }
-
-    &-dots {
-      margin-left: 60px;
-      margin-right: 60px;
-    }
-  }
-
-
-  &__slide {
-    flex-direction: column;
-    max-height: 448px;
-  }
+  .header {}
 }

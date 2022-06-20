@@ -16,20 +16,40 @@
 <body>
   <header class="header">
     <div class="site-container">
-      <div class="header__inner">
-        <a class="logo" href="#">
-          <img src="images/logo.png" alt="logo" class="logo__img">
-        </a>
-        <nav class="menu">
-          <ul class="menu__list">
-            <li><a href="#" class="menu__list-link">Наши услуги</a></li>
-            <li><a href="#" class="menu__list-link">Акции</a></li>
-            <li><a href="#" class="menu__list-link">Прайс</a></li>
-            <li><a href="#" class="menu__list-link">Контакты</a></li>
-          </ul>
-        </nav>
-        <a href="#" class="phone-number">8 (913) 944-93-63</a>
-        <a href="#" class="location">г. Новосибирск, ул. Вокзальная магистраль,16, оф. 205, 2 эт.</a>
+      <div class="header__wrapper">
+        <div class="header__inner">
+          <a class="header__logo" href="#">
+            <img src="images/logo.png" alt="logo" class="logo__img">
+          </a>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li><a href="#" class="menu__list-link">Наши услуги</a></li>
+              <li><a href="#stocks" class="menu__list-link">Акции</a></li>
+              <li><a href="#" class="menu__list-link">Прайс</a></li>
+              <li><a href="#" class="menu__list-link">Контакты</a></li>
+            </ul>
+          </nav>
+          <a href="#" class="phone-number">8 (913) 944-93-63</a>
+          <a href="#" class="location">г. Новосибирск, ул. Вокзальная магистраль,16, оф. 205, 2 эт.</a>
+        </div>
+
+        <div class="header__burger">
+          <nav class="menu">
+            <ul class="menu__list">
+              <li><a href="#" class="menu__list-link">Наши услуги</a></li>
+              <li><a href="#stocks" class="menu__list-link">Акции</a></li>
+              <li><a href="#" class="menu__list-link">Прайс</a></li>
+              <li><a href="#" class="menu__list-link">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="menu__burger">
+            <img class="burger__menu" src="images/burger-menu.png" alt="">
+          </div>
+          <a class="header__logo" href="#">
+            <img src="images/logo.png" alt="logo" class="logo__img">
+          </a>
+          <a href="#" class="menu__list-link">Прайс</a>
+        </div>
       </div>
     </div>
   </header>
@@ -44,11 +64,11 @@
         </div>
         <div class="first__text">Студия Body Time</div>
         <button class="first__btn">Обратный звонок</button>
-        <a href="#" class="scroll-btn"><img src="images/scroll-btn.png" alt="scroll-btn"></a>
+        <a href="#about" class="scroll-btn menu__list-link"><img src="images/scroll-btn.png" alt="scroll-btn"></a>
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
       <div class="container">
         <div class="about__title">О нас</div>
         <div class="about__items">
@@ -104,7 +124,7 @@
       </div>
     </section>
 
-    <section class="stocks">
+    <section class="stocks" id="stocks">
       <div class="container">
         <div class="stocks__title">Акции</div>
         <div class="stocks__slider">
@@ -177,25 +197,25 @@
       </div>
     </section>
 
-    <!-- Modals -->
-    <div class="popup" data-modal>
-      <div class="popup__dialog">
-        <div class="popup__content">
-          <button class="popup__close">&times;</button>
-          <form action="#" class="popup__form">
-            <div class="popup__form-title">Обратный звонок</div>
-            <input class="popup__form-input" type="text" name="user-name" required placeholder="Ваше имя">
-            <input class="popup__form-input" type="text" name="user-phone" required placeholder="+7 (953) 812-12-77">
-            <label class="checkbox">
-              <input type="checkbox" class="custom-checkbox">
-              <span class="checkbox-label">Заполняя форму на сайте, Вы соглашаетесь с нашей Политикой
-                конфиденциальности</span>
-            </label>
-            <button class="popup__form-btn" type="submit" name="submit">Заказать звонок</button>
-          </form>
-        </div>
+    <!--  <!-- Modals -->
+    <!-- <div class="popup" data-modal>
+    <div class="popup__dialog">
+      <div class="popup__content">
+        <button class="popup__close">&times;</button>
+        <form action="#" class="popup__form">
+          <div class="popup__form-title">Обратный звонок</div>
+          <input class="popup__form-input" type="text" name="user-name" required placeholder="Ваше имя">
+          <input class="popup__form-input" type="text" name="user-phone" required placeholder="+7 (953) 812-12-77">
+          <label class="checkbox">
+            <input type="checkbox" class="custom-checkbox">
+            <span class="checkbox-label">Заполняя форму на сайте, Вы соглашаетесь с нашей Политикой
+              конфиденциальности</span>
+          </label>
+          <button class="popup__form-btn" type="submit" name="submit">Заказать звонок</button>
+        </form>
       </div>
     </div>
+  </div>
 
   </main>
 
@@ -237,9 +257,9 @@
         </div>
       </div>
     </div>
-  </footer>
+  </footer> -->
 
-  <script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,126 @@
+// Classes
+
+class ServiceCard {
+  constructor(src, alt, title, firstLine, firstLineOldPrice, secondtLine, secondLineOldPrice, thirdtLine, thirdLineOldPrice, parentSelector) {
+    this.src = src;
+    this.alt = alt;
+    this.title = title;
+    this.firstLine = firstLine;
+    this.firstLineOldPrice = firstLineOldPrice;
+    this.secondLine = secondtLine;
+    this.secondLineOldPrice = secondLineOldPrice;
+    this.thirdLine = thirdtLine;
+    this.thirdLineOldPrice = thirdLineOldPrice;
+    this.parent = document.querySelector(parentSelector);
+  }
+
+  render() {
+    const element = document.createElement('div');
+    element.innerHTML = `
+      <div class="services__item">
+        <img class="services__item-img" src=${this.src} alt=${this.alt}>
+        <div class="services__item-title">${this.title}</div>
+        <div class="services__item-descr">${this.firstLine} <span> ${this.firstLineOldPrice}</span></div>
+        <div class="services__item-descr">${this.secondLine} <span> ${this.secondLineOldPrice}</span></div>
+        <div class="services__item-descr">${this.thirdLine} <span> ${this.thirdLineOldPrice}</span></div>
+      </div>
+    `;
+    this.parent.append(element);
+  }
+}
+
+new ServiceCard(
+  "images/service-1.jpg",
+  "service-1",
+  "RF-лифтинг лица (тела)",
+  "1 сеанс - 1000 руб.",
+  "",
+  "4 сеанса - 3600 руб.",
+  "4000 р.",
+  "8 сеансов - 6400 руб.",
+  "8000 р.",
+  ".services__items"
+).render();
+
+new ServiceCard(
+  "images/service-2.jpg",
+  "service-2",
+  "Ультрозвуковая кавитация",
+  "1 сеанс - 900 руб.",
+  "",
+  "4 сеанса - 3200 руб.",
+  "4000 р.",
+  "8 сеансов - 5600 руб.",
+  "8000 р.",
+  ".services__items"
+).render();
+
+new ServiceCard(
+  "images/service-3.jpg",
+  "service-3",
+  "Миостимуляция тела",
+  "1 сеанс - 450 руб.",
+  "",
+  "5 сеанса - 2000 руб.",
+  "2250 р.",
+  "10 сеансов - 3000 руб.",
+  "4500 р.",
+  ".services__items"
+).render();
+new ServiceCard(
+  "images/service-4.jpg",
+  "service-4",
+  "Миостимуляция лица",
+  "10 сеансов - 5000 руб.",
+  "7000 р.",
+  "",
+  " ",
+  "",
+  "",
+  ".services__items"
+).render();
+
+// Scroll
+
+function scroll(selector) {
+  let scrollLink = document.querySelectorAll(selector);
+
+  scrollLink.forEach(item => {
+    addEventListener('click', (e) => {
+      e.preventDefault();
+
+      console.log('clicked');
+
+      let id = e.target.getAttribute('href').replace('#', '');
+
+      window.scrollTo({
+        top: document.getElementById(id).offsetTop,
+        behavior: 'smooth',
+      });
+    });
+  });
+}
+
+scroll('.menu__list-link');
+
+let scrollBtn = document.querySelector('.scroll-btn');
+
+scrollBtn.addEventListener('click', (e) => {
+  if (e.target.matches('.scroll-btn')) {
+    e.preventDefault();
+
+    console.log('clicked');
+
+    const id = scrollBtn.getAttribute('href').replace('#', '');
+
+    window.scrollTo({
+      top: document.getElementById(id).offsetTop,
+      behavior: 'smooth',
+    });
+  }
+});
+
+
 // Slider
 
 const slides = document.querySelectorAll('.stocks__slide'),
@@ -155,6 +278,15 @@ function calcScroll() {
   return scrollWidth;
 }
 
-
-
 bindModal('.first__btn', '.popup', '.popup__close');
+
+// Burger-menu
+
+let burgerBtn = document.querySelector('.menu__burger'),
+  menu = document.querySelector('.menu');
+
+burgerBtn.addEventListener('click', (e) => {
+  menu.style.left = '0';
+  console.log('cool');
+});
+
